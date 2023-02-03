@@ -13,9 +13,7 @@ import java.util.regex.Pattern;
 
 public class RegexPinValidator {
     public boolean validate(String pin){
-        // minimum of digits:  4
-        // maximum of digits: 10
-        String  regex   = "[0-9]{4,6}";
+        String  regex   = "([0-9]{6})|([0-9]{4})";
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(pin);
