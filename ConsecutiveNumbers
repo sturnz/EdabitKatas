@@ -1,0 +1,21 @@
+// Website with full Kata: https://edabit.com/challenge/Md6usCHQ7Xsj2fQi3
+// Create a function that determines whether elements in an array can be re-arranged to form 
+// a consecutive list of numbers where each number appears exactly once.
+
+
+import java.util.Arrays;
+
+public class ConsecutiveNumbers {
+
+    public boolean isConsecutive(int[] numbers){
+
+        Arrays.sort(numbers);
+
+        for(int index = 1; index < numbers.length; index++){
+            if(numbers[index] - numbers[index-1] != 1){
+                return false;
+            }
+        }
+        return true;
+    }
+}
